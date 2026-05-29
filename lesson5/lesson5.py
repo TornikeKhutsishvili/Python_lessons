@@ -297,28 +297,61 @@
 #     41
 
 # მომხმარებელი წერს რიცხვებს space-ებით
-customer_numb = list(map(int, input("შეიყვანეთ რიცხვები სფეისებით: ").split()))
-
-# სანამ სიაში ერთზე მეტი ელემენტია
-while len(customer_numb) > 1:
-    # მიმდინარე რიგის დაბეჭდვა
-    print(*customer_numb)
-
-    # ახალი სიის შესაქმნელად
-    new_row = []
-
-    # მეზობელი ელემენტების ჯამი
-    for i in range(len(customer_numb) - 1):
-        new_row.append(customer_numb[i] + customer_numb[i + 1])
-
-    # გადავდივართ ახალ რიგზე
-    customer_numb = new_row
-
-print(customer_numb)
-
-
+# customer_numb = list(map(int, input("შეიყვანეთ რიცხვები სფეისებით: ").split()))
+#
+# # სანამ სიაში ერთზე მეტი ელემენტია
+# while len(customer_numb) > 1:
+#     # მიმდინარე რიგის დაბეჭდვა
+#     print(*customer_numb)
+#
+#     # ახალი სიის შესაქმნელად
+#     new_row = []
+#
+#     # მეზობელი ელემენტების ჯამი
+#     for i in range(len(customer_numb) - 1):
+#         new_row.append(customer_numb[i] + customer_numb[i + 1])
+#
+#     # გადავდივართ ახალ რიგზე
+#     customer_numb = new_row
+#
+# print(customer_numb)
 
 
+
+
+# 9. მომხმარებელს შეყავს ნებისმიერი ტექსტი, მოძებნე, რომელი სიტყვა მეორდება ტექსტში
+# ყველაზე მეტჯერ. მაგ: "Python is great and python is easy" → ყველაზე ხშირია
+# "python". თუ ორი ან მეტი სიტყვაა ტოლი, დააბრუნე ყველა.
+
+# def duplicat_word(text):
+#     text = text.lower()
+#     words = text.split() # split() ტექსტს სიტყვებად ყოფს
+#     word_count = {} # სიტყვების რაოდენობის დასათვლელი dictionary
+#
+#     for word in words:
+#         # თუ სიტყვა უკვე არსებობს dictionary-ში
+#         if word in word_count:
+#             word_count[word] += 1
+#
+#         # თუ არ არსებობს → ვიწყებთ 1-დან
+#         else:
+#             word_count[word] = 1
+#
+#     # ყველაზე ხშირი სიტყვის პოვნა (რაოდენობის)
+#     max_count = max(word_count.values())
+#
+#     # ყველა იმ სიტყვის მოძებნა, რომელსაც max_count აქვს
+#     result = []
+#
+#     for word, count in word_count.items():
+#         if count == max_count:
+#             result.append(word)
+#
+#     return result
+#
+# max_quantity_word = duplicat_word("Python is great and python is easy")
+# # max_quantity_word = duplicat_word("Python is great and python is easy, it is very popular")
+# print(max_quantity_word)
 
 
 
