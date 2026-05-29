@@ -77,50 +77,94 @@
 # ამოცანა: მომხმარებლის შეყვანილი პაროლი შეაფასე 0–10 შკალით: სიგრძე, ციფრები, სიმბოლოები,
 # დიდი/პატარა ასოები, განმეორებადი სიმბოლოების არსებობა. მოთხოვნები: გამოიტანე “weak/medium/strong”.
 
-import re # regex (pattern validation) გამოყენებისთვის
-user_password = input("გთხოვთ შეიყვანეთ პაროლი")
-
-# strong პაროლი:
-# - უნდა იყოს 8 სიმბოლოზე მეტი, - უნდა შეიცავდეს დიდ ასოს, - პატარა ასოს, - ციფრს, - სპეციალურ სიმბოლოს
-# re.search() გამოიყენება ტექსტში კონკრეტული pattern-ის (ნიმუშის) მოსაძებნად.
-strong_password = (
-    len(user_password) > 8
-    and re.search(r"[A-Z]", user_password)
-    and re.search(r"[a-z]", user_password)
-    and re.search(r"[0-9]", user_password)
-    and re.search(r"[^A-Za-z0-9]", user_password)
-)
-
-# medium პაროლი:
-# - უნდა იყოს 8 სიმბოლოზე მეტი, - უნდა შეიცავდეს დიდ ასოს, - უნდა შეიცავდეს ციფრს
-medium_password = (
-    len(user_password) > 8
-    and re.search(r"[A-Z]", user_password)
-    and re.search(r"[0-9]", user_password)
-)
-
-# weak პაროლი:
-# - მხოლოდ სიგრძეს ამოწმებს და იწყება თუ არა ასეოებზე
-week_password = user_password.startswith("[a-z]") and len(user_password) > 8
-
-if strong_password:
-    print("strong")
-elif medium_password:
-    print("medium")
-elif week_password:
-    print("weak")
-else:
-    print("your password doesn't match requirements")
-
-
+# import re # regex (pattern validation) გამოყენებისთვის
+# user_password = input("გთხოვთ შეიყვანეთ პაროლი")
+#
+# # strong პაროლი:
+# # - უნდა იყოს 8 სიმბოლოზე მეტი, - უნდა შეიცავდეს დიდ ასოს, - პატარა ასოს, - ციფრს, - სპეციალურ სიმბოლოს
+# # re.search() გამოიყენება ტექსტში კონკრეტული pattern-ის (ნიმუშის) მოსაძებნად.
+# strong_password = (
+#     len(user_password) > 8
+#     and re.search(r"[A-Z]", user_password)
+#     and re.search(r"[a-z]", user_password)
+#     and re.search(r"[0-9]", user_password)
+#     and re.search(r"[^A-Za-z0-9]", user_password)
+# )
+#
+# # medium პაროლი:
+# # - უნდა იყოს 8 სიმბოლოზე მეტი, - უნდა შეიცავდეს დიდ ასოს, - უნდა შეიცავდეს ციფრს
+# medium_password = (
+#     len(user_password) > 8
+#     and re.search(r"[A-Z]", user_password)
+#     and re.search(r"[0-9]", user_password)
+# )
+#
+# # weak პაროლი:
+# # - მხოლოდ სიგრძეს ამოწმებს და იწყება თუ არა ასეოებზე
+# week_password = user_password.startswith("[a-z]") and len(user_password) > 8
+#
+# if strong_password:
+#     print("strong")
+# elif medium_password:
+#     print("medium")
+# elif week_password:
+#     print("weak")
+# else:
+#     print("your password doesn't match requirements")
 
 
 
 
 
 
+#3 დაწერე ფუნქცია (ფიბონაჩის რიგი) - *რა არის ფიბონაჩი - ბოლო ორი ელემენტის ჯამით ვამატებთ
+# ახალ რიცხვს*, სანამ სიგრძე არ გახდება მომხმარებლის მიერ შემოყვანილი რიცხვი, აუცილებლად
+# უნდა შემოიტანოს რიცხვი, სხვა რამის შემოტანის დროს უნდა შემოწმდეს რა შემოიტანა
+# მომხმარებელმა და უნდა დაუსახელო აღნიშნული და უთხრა რომ მხოლოდ რიცხვი შემოიტანოს. მაგ:
+# შემოიტანა სიმბოლო, უნდა უთხრა შენ შემოიტანე სიმბოლო არასწორია, მხოლოდ რიცხვი!
+
+def fibonacci_row():
+    user_input = input("შეიყვანეთ რიცხვი: ")
+
+    if user_input.isdigit():
+        number = int(user_input)
+
+        fibonacci = [0, 1] # ფიბონაჩის საწყისი სია
+
+        if number == 1: # თუ მომხმარებელმა შეიყვანა 1
+            print([0])
+        elif number == 2: # თუ მომხმარებელმა შეიყვანა 2
+            print(fibonacci)
+        else:
+            # სანამ სიის სიგრძე არ გაუტოლდება მომხმარებლის რიცხვს
+            while len(fibonacci) < number:
+                # ბოლო ორი ელემენტის ჯამი
+                next_number = fibonacci[-1] + fibonacci[-2]
+
+                # ახალი რიცხვის დამატება სიაში
+                fibonacci.append(next_number)
+
+            # შედეგის დაბეჭდვა
+            print(fibonacci)
+    else:
+        # ვამოწმებთ რა ტიპის სიმბოლო შემოიტანა მომხმარებელმა
+        # თუ ასოები შეიყვანა
+        # isalpha() - ვამოწმებთ ასოებზე, სტრინგი შედგება მხოლოდ: A-Z a-z
+        if user_input.isalpha():
+            print("თქვენ შემოიტანეთ ასოები, მხოლოდ რიცხვი შეიყვანეთ!")
+
+        # თუ სპეციალური სიმბოლოები შეიყვანა
+        # isalnum() - ვამოწმებთ სიმბოლოებზე, ამოწმებს სტრინგი შედგება თუ არა ასოებისგან და რიცხვებისგან
+        # ამ შემთხვევაში not -ი მიუთითებს რომ თუ არც ასოებს და არც რიცხვებს არ შეიცავს მაშინ სხვა სიმბოლოებია
+        elif not user_input.isalnum():
+            print("თქვენ შემოიტანეთ სიმბოლოები, მხოლოდ რიცხვი შეიყვანეთ!")
+
+        # სხვა არასწორი შემთხვევა
+        else:
+            print("არასწორი მონაცემი, მხოლოდ რიცხვი შეიყვანეთ!")
 
 
+fibonacci_row()
 
 
 
