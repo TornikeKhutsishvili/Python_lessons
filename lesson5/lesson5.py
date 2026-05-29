@@ -208,23 +208,65 @@
 # მომხმარებელს შემოაქვს მხოლოდ ერთი სიტყვა (სხვა შემთხვევები დაბლოკე) და შენ სთავაზობ 5
 # ზედმეტსახელს ამ სიტყვასთან კავშირში.
 
+# import random
+# customer_word = input("შემოიყვანეთ მხოლოდ ერთი სიტყვა")
+#
+# # ვამოწმებთ არის თუ არა ერთი სიტყვა
+# if len(customer_word.split()) == 1 and customer_word.isalpha():
+#     nicknames = []
+#
+#     for i in range(5):
+#         number = random.randint(1, 100)
+#         nickname = customer_word + str(number)
+#         nicknames.append(nickname.strip())
+#
+#     print("შენი ზედმეტსახელები:")
+#     for n in nicknames:
+#         print(f"შენი ზედმეტსახელები: {n}")
+# else:
+#     print("არასწორი input! შეიყვანე მხოლოდ ერთი სიტყვა! (მხოლოდ ასობით)")
+
+
+
+
+# 6. სორტირება
+# მომხმარებელს შემოჰყავს რიცხვები თითო გამოტოვებით, (ულიმიტოდ რამდენიც უნდა) პროგრამა სთავაზობს
+# როგორ უნდა რომ დაუსორტირდეს აღნიშნული: კლებადობით, ზრდადობით, random-ად, მხოლოდ
+# უნიკალური მონაცემები დატოვოს. რომელსაც აირჩევს უნდა გამოვიდეს ზუსტად ისე დალაგებული სია.
+
 import random
-customer_word = input("შემოიყვანეთ მხოლოდ ერთი სიტყვა")
 
-# ვამოწმებთ არის თუ არა ერთი სიტყვა
-if len(customer_word.split()) == 1 and customer_word.isalpha():
-    nicknames = []
+# მომხმარებლის input (space-ებით გაყოფილი რიცხვები)
+# წერს რიცხვებს ერთ ხაზზე (space-ებით გაყოფილად)
+numbers = list(map(int, input("შეიყვანე რიცხვები (space-ით): ").split()))
+# .split() → ყოფს ტექსტს space-ებით სიის სახით: ["5", "2", "9", ...]
+# map(int, ...) → თითოეულ string-ს აქცევს integer-ად
+# list(...) → საბოლოოდ ქმნის სრულ რიცხვების სიას
 
-    for i in range(5):
-        number = random.randint(1, 100)
-        nickname = customer_word + str(number)
-        nicknames.append(nickname.strip())
+print("\nაირჩიე სორტირების ტიპი:") # ვბეჭდავთ მენიუს სათაურს მომხმარებლისთვის
+print("1 - ზრდადობით")
+print("2 - კლებადობით")
+print("3 - random")
+print("4 - მხოლოდ უნიკალური მნიშვნელობები")
 
-    print("შენი ზედმეტსახელები:")
-    for n in nicknames:
-        print(f"შენი ზედმეტსახელები: {n}")
+you_choice = input("შენი არჩევანი: ")
+
+if you_choice == "1":
+    result = sorted(numbers) # sorted() აბრუნებს ახალ სიას, დალაგებულს ზრდადობით
+elif you_choice == "2":
+    result = sorted(numbers, reverse=True) # sorted(..., reverse=True) აბრუნებს დალაგებულ სიას კლებადობით
+elif you_choice == "3":
+    result = numbers[:] # numbers[:] ქმნის სიის ასლს, რათა ორიგინალი არ შეიცვალოს
+    random.shuffle(result) # shuffle შემთხვევითად არევს სიის ელემენტებს
+elif you_choice == "4":
+    # dict.fromkeys(numbers) შლის დუბლიკატებს და ინარჩუნებს რიგს
+    # შემდეგ list() აბრუნებს მას სიის ფორმატში
+    # უნიკალური ელემენტების შენარჩუნება (order preserved)
+    result = list(dict.fromkeys(numbers))
 else:
-    print("არასწორი input! შეიყვანე მხოლოდ ერთი სიტყვა! (მხოლოდ ასობით)")
+    print("არასწორი არჩევანია!")
+    result = [] # ვაბრუნებთ ცარიელ სიას, რადგან valid შედეგი არ გვაქვს
+print("\nშედეგი:", result) # საბოლოო შედეგს ვბეჭდავთ
 
 
 
