@@ -118,3 +118,117 @@
 # for iter_str in range(1, len(my_str) + 1): # ვცვლით კომბინაციის სიგრძეს: 1-დან სტრინგის სიგრძემდე (3-მდე)
 #     for combination in itertools.combinations(my_str, iter_str): # ვქმნით კომბინაციებს მოცემული სიგრძით
 #         print(my_str_result.join(combination)) # tuple-ს ვაქცევთ სტრინგად და ვბეჭდავთ
+
+
+
+
+# 7. თამაში უკუსვლაზე
+
+# კომპიუტერი ირჩევს შემთხვევითობის პრინციპით რიცხვს 1-20 მდე, მოთამაშეს აქვს მხოლოდ 5 წამი რიცხვის გამოსაცნობად,
+# თუ 5 წამში სწორ რიცხვს ვერ შეიყვანს, თამაში სრულდება და გამოდის ტექსტი "დრო ამოიწურა, თქვენ დამარცხდით".
+
+# from datetime import datetime, timedelta
+# import time, random
+#
+# comp_choice = random.randint(1,20)
+# start_time = datetime.now()
+# time_limit = timedelta(seconds=5)
+#
+# customer_numb = input("შეიყვანეთ სასურველი რიცხვი (1-20), დრო: 5 წამი!")
+#
+# end_time = datetime.now()
+# finish_time = end_time - start_time
+#
+# # print("კომპიუტერის რიცხვი:", comp_choice)
+#
+# if finish_time > time_limit:
+#     print("დრო ამოიწურა, თქვენ დამარცხდით!")
+# else:
+#     if int(customer_numb) == comp_choice:
+#         print("სწორია, თქვენ მოიგეთ!")
+#     else:
+#         print("არასწორია, თქვენ დამარცხდით!")
+
+
+
+
+# 8. ორი მოთამაშე იწყებს "გარბენს". უნდა შეამოწმო რომელი დაასრულებს ნაკლებ დროში
+
+# from datetime import datetime, timedelta
+# import random
+#
+# start = datetime.now()
+#
+# random_time1 = random.randint(5,20)
+# random_time2 = random.randint(5,20)
+#
+# player1 = start + timedelta(seconds=random_time1)
+# player2 = start + timedelta(seconds=random_time2)
+#
+# print(f"Player 1: {player1}")
+# print(f"Player 2: {player2}")
+#
+# if player1 > player2:
+#     print(f"ნაკლებ დროში დაასრულა მეორე მოთამაშემ - {player2}")
+# elif player1 < player2:
+#     print(f"ნაკლებ დროში დაასრულა პირვემა მოთამაშემ - {player1}")
+# elif player1 == player2:
+#     print(f"თანაბარ დროში დაასრულა ორივე მოთამაშემ")
+# else:
+#     print("დაფიქსირდა ხარვეზი!")
+
+
+
+
+# 9. იღბლიანი დაბადების დღე
+# მოთამაშემ უნდა შეიყვანოს დაბადების თარიღი და თამაში დაითვლის რამდენი დღეა დარჩენილი შემდეგ დაბადების დღემდე
+# birthday = date(2000, 12, 10)
+
+# from datetime import date
+#
+# tday = date.today()
+#
+# player_birth_inp = input("შეიყვანეთ დაბადების თარიღი, ფორმატი: (წელი:თვე:დღე) ")
+#
+# # დაშლა ცვლადებად (year, month, day)
+# # ტექსტიდან რიცხვების მიღება: map(int, split())
+# year, month, day = map(int, player_birth_inp.split(":"))
+#
+# birthday = date(year, month, day) # დაბადების თარიღი (საბაზო)
+# next_birthday = date(tday.year, month, day) # ამ წლის დაბადების დღე
+#
+# # თუ უკვე გავიდა ამ წლის დაბადების დღე, მაშინ გადავდივართ შემდეგ წელზე
+# if next_birthday < tday:
+#     next_birthday = date(tday.year + 1, month, day)
+#
+# # სხვაობა დღეებში
+# days_left = (next_birthday - tday).days
+#
+# print("დღეები შემდეგ დაბადების დღემდე:", days_left)
+
+
+
+
+# 10. საცავი - ჯუნიორ ჰაკერი :)
+
+# თამაში არის შემდეგი - გვაქვს სეიფი რომელსაც აქვს ციფრები 1-6 მდე პაროლი არ ვიცით, ყოველ დღე
+# კომპიუტერი აგენერირებს ახალ პაროლს (შემთხვევითობის პრინციპით) პაროლი არის 4 ციფრიანი. ჩვენი
+# მიზანია დავწეროთ ისეთი კოდი რომელიც შეამოწმებს ვარიანტებს და როცა მოხდება კომპიუტერის მიერ
+# დაგენერირებული პაროლის დამთხვევა უნდა გამოვიტანოთ შეტყობინება "პაროლი სწორია, საცავი გახსნილია",
+# აუცილებელი პირობაა გამოვიტანოთ ყველა ჩვენს მიერ ნაცადი პაროლი სანამ მივალთ სწორ ვარიანტამდე.
+
+import itertools, random
+
+counter = 0
+password = tuple(random.randint(1, 6) for _ in range(4))
+# print(f"გენერირებული პაროლი:, {password}")
+
+# product() გამოვიყენეთ, რადგან პაროლში ციფრები შეიძლება განმეორდეს.
+for guess in itertools.product(range(1, 7), repeat=4):
+    counter += 1
+    print(f"ნაცადი პაროლი {guess}")
+
+    if guess == password:
+        print("პაროლი სწორია, საცავი გახსნილია!")
+        break
+print(f"{counter} ცდა")
