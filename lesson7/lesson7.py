@@ -199,11 +199,57 @@
 # თუ ფრეა ვიმეორებთ, სხვა შემთხვევაში მოგებულ მოთამაშეს უნდა ვკითხოთ კიდევ 1 შანსს მისცემს თუ არა წაგებულს და კიდევ გააგორებს
 # თუ არა, თუ უარია ვამთავრებთ, თუ თანახმაა იგივე ლოგიკა უნდა გაგრძელდეს სანამ უარს არ იტყვის ერთ-ერთი.
 
+# import random, logging
+#
+# logging.basicConfig(
+#     filename="dice.log",
+#     level=logging.DEBUG,
+#     encoding="utf-8",
+#     format="%(asctime)s - %(message)s"
+# )
+#
+# def dice_roll():
+#     logging.debug("თამაში დაიწყო!\n")
+#
+#     while True:
+#         gamer1 = random.randint(1, 6)
+#         gamer2 = random.randint(1, 6)
+#
+#         print(f"Gamer 1: {gamer1}")
+#         print(f"Gamer 2: {gamer2}")
+#         logging.debug(f"Gamer 1 -> {gamer1} | Gamer 2 -> {gamer2}")
+#
+#         if gamer1 == gamer2:
+#             print("ფრე! თავიდან ვაგორებთ.")
+#             logging.debug("ფრე")
+#             continue
+#
+#         if gamer1 > gamer2:
+#             winner = "Gamer 1"
+#             loser = "Gamer 2"
+#
+#         if gamer1 < gamer2:
+#             winner = "Gamer 2"
+#             loser = "Gamer 1"
+#
+#         print(f"{winner} მოიგო!")
+#         logging.info(f"გამარჯვებული: {winner}")
+#
+#         answer = input(f"{winner}, მისცემ {loser}-ს კიდევ ერთ შანსს? (yes/no): ").lower()
+#
+#         if answer != "yes":
+#             print("თამაში დასრულდა!")
+#             break
+#
+#         print("ახალი რაუნდი იწყება...\n")
+#
+#     logging.debug("თამაში დასრულდა!\n\n")
+#
+# dice_roll()
 
 
 
-
-#8. შექმენი პროგრამა სადაც გექნება გადაცემული 10 სიტყვა ლისტში და ლოგიკა არის შემდეგი, ამ სიტყვებიდან 2 ცალს ირჩევ შემთხვევითობის
+# 8. შექმენი პროგრამა სადაც გექნება გადაცემული 10 სიტყვა ლისტში და ლოგიკა არის შემდეგი, ამ სიტყვებიდან 2ცალს ირჩევ შემთხვევითობის
 # პრინციპით და თითოეული სიტყვიდან უნდა ამოაკლო 2 ასო და მომხმარებელს აჩვენო მსგავსი ფორმით და უთხრა რომ გამოიცნოს სიტყვა და
 # ჩაწეროს სრულად, თუ გამოიცნო “გამარჯვება” თუ ვერ გამოიცნო ვერცერთი სიტყვა “დამარცხდი”, ერთის გამოცნობის შემთხვევაში “50%”
 
