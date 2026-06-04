@@ -253,4 +253,77 @@
 # პრინციპით და თითოეული სიტყვიდან უნდა ამოაკლო 2 ასო და მომხმარებელს აჩვენო მსგავსი ფორმით და უთხრა რომ გამოიცნოს სიტყვა და
 # ჩაწეროს სრულად, თუ გამოიცნო “გამარჯვება” თუ ვერ გამოიცნო ვერცერთი სიტყვა “დამარცხდი”, ერთის გამოცნობის შემთხვევაში “50%”
 
+import random, logging
 
+logging.basicConfig(
+    filename="words_game.log",
+    level=logging.DEBUG,
+    encoding="utf-8",
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+words = [
+    "computer", "internet", "angular", "python", "flask",
+    "javascript", "developer", "database", "framework", "programming"
+]
+
+# ეს ფუნქცია მუშაობს რომ დამალოს 2 შემთხვევითი ასო სიტყვაში
+def hide_two_letters(word):
+    # სიტყვას ვაქცევ list-ად, რადგან შევძლოთ ცვლილება სიტყვაში
+    word_list = list(word)
+
+    # თუ სიტყვა ძალიან პატარაა, უბრალოდ ვაბრუნებთ ამ სიტყვას
+    if len(word_list) < 2:
+        return word
+
+    # ირჩევს 2 random index-ს
+    indexes = random.sample(range(len(word_list)), 2)
+
+    # თითოეულ არჩეულ ინდექსზე ვსვამთ "_"
+    for i in indexes:
+        word_list[i] = "_"
+
+    return "".join(word_list)
+
+# მთავარი პროგრამა
+def main():
+    logging.debug("Game started\n")
+
+    # ვირჩევთ შემთხვევით 2 სიტყვას 10-დან
+    selected_words = random.sample(words, 2)
+    score = 0
+
+    print("გამოიცანი სიტყვები!")
+    print("---------------------")
+
+    # თითოეულ არჩეულ სიტყვაზე ვუშვებთ თამაშს
+    for hidden_word, real_word in [(hide_two_letters(w), w) for w in selected_words]:
+        print(f"სიტყვა: {hidden_word}")
+        guess = input("შეიყვანე სრული სიტყვა: ").strip().lower()
+
+        # ლოგი: რა სიტყვა იყო, რა ნახა user-მა და რა უპასუხა
+        logging.info(f"Hidden word shown: {hidden_word}, real: {real_word}, user guessed: {guess}")
+
+        # ვამოწმებთ სწორია თუ არა პასუხი
+        if guess == real_word:
+            print("სწორია!")
+            logging.info("Correct guess")
+            score += 1
+        else:
+            print(f"არასწორია! სწორი იყო: {real_word}")
+            logging.info("Wrong guess")
+
+    # საბოლოო შედეგის დათვლა
+    if score == 2:
+        result = "გამარჯვება"
+    elif score == 1:
+        result = "50%"
+    else:
+        result = "დამარცხდი"
+
+    print("\nშედეგი:", result)
+    logging.info(f"Game finished with result: {result}\n")
+
+# პროგრამის გაშვება
+if __name__ == "__main__":
+    main()
