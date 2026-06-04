@@ -137,11 +137,61 @@
 
 
 # 6. შექმენი პროგრამა სადაც მომხმარებელი ეჯიბრება კომპიუტერს: ქვა/ბადე/მაკრატელის თამაშში, თამაში არის სამამდე, კომპიუტერი
-# შემთხვევითობის პრინციპით ირჩევს ამ სამიდან 1-ს , ასევე ტერმინალში მომხმარებელი წერს ერთერთს, ერთნაირის შემთხვევაში ფრეა
+# შემთხვევითობის პრინციპით ირჩევს ამ სამიდან 1-ს, ასევე ტერმინალში მომხმარებელი წერს ერთერთს, ერთნაირის შემთხვევაში ფრეა
 # და გრძელდება თამაში 3-მდე, ვინც პირველი მიაღწევს 3-ს გამოიტანე შეტყობინება …..-მ გაიმარჯვა, ყველა ნათამაშები ხელი უნდა
 # შეინახოო ლოგირების ფაილში.
 
-
+# import random, logging
+#
+# logging.basicConfig(
+#     filename="customerVScomputer.log",
+#     level=logging.DEBUG,
+#     encoding="utf-8",
+#     format="%(asctime)s - %(message)s"
+# )
+#
+# choices = ["ქვა", "ბადე", "მაკრატელი"]
+# player_score = 0
+# computer_score = 0
+#
+# with open("customerVScomputer.log", "a", encoding="utf-8") as file:
+#     logging.debug(f"თამაში დაიწყო\n\n")
+#
+#     while player_score < 3 and computer_score < 3:
+#
+#         player_choice = input("აირჩიე (ქვა/ბადე/მაკრატელი): ").lower()
+#         computer_choice = random.choice(choices).lower()
+#
+#         logging.info(f"მომხმარებელი: {player_choice} | კომპიუტერი: {computer_choice}\n")
+#         print(f"კომპიუტერმა აირჩია: {computer_choice}")
+#
+#         if player_choice == computer_choice:
+#             print(f"ფრეა!")
+#             continue
+#         elif (
+#             (player_choice == "ქვა" and computer_choice == "მაკრატელი")
+#             or (player_choice == "მაკრატელი" and computer_choice == "ბადე")
+#             or (player_choice == "ბადე" and computer_choice == "ქვა")
+#         ):
+#             player_score += 1
+#             logging.info("რაუნდი მოიგე!")
+#             print("რაუნდი მოიგე!")
+#         else:
+#             computer_score += 1
+#             logging.warning("რაუნდი მოიგო კომპიუტერმა! უკეთესად თამაში გმართებთ!")
+#             print("რაუნდი მოიგო კომპიუტერმა!")
+#
+#         print(f"ქულები -> მომხმარებელი: {player_score} | კომპიუტერი: {computer_score}")
+#
+#     if player_score == 3:
+#         print("მომხმარებელმა გაიმარჯვა!")
+#         logging.info("გამარჯვებული: მომხმარებელი\n\n")
+#
+#     else:
+#         print("კომპიუტერმა გაიმარჯვა!")
+#         logging.info("გამარჯვებული: კომპიუტერი\n\n")
+#
+#     logging.debug(f"თამაში დასრულდა!")
 
 
 
