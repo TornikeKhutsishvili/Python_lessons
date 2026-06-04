@@ -103,10 +103,36 @@
 # print(f"თქვენ დააგროვეთ {score} ქულა 50-დან")
 
 
+
 # 5. შექმენით ფაილი quiz.log, შექმენით გენერატორი რომელშიც შენახული იქნება 5 შეკითხვა და სათითაოდ დააბრუნებს,
 # მომხმარებელმა უნდა უპასუხოს ყველა შეკითხვას და პასუხები შეინახეთ ლოგ ფაილში.
 
-
+# def quiz_gen():
+#     quest = (
+#         "რამდენია 2+2?",
+#         "რამდენია 5-3?",
+#         "რამდენია 3*3?",
+#         "რამდენია 10/2?",
+#         "რამდენია 12%5?"
+#     )
+#
+#     for q in quest:
+#         yield q
+#
+# gen = quiz_gen()
+#
+# # "r" - read,
+# # "w" - write,
+# # "a" - append,
+# # "x" - eXclusive Create,
+# # "r+" - read + write - წაკითხვა და ჩაწერა,
+# # "w+" - read + write - თუმცა ჯერ ასუფთავებს ფაილს,
+# # "a+" - read + add - წაკითხვა და ბოლოში დამატება
+#
+# with open("quiz.log", "a", encoding="utf-8") as file:
+#     for question in gen:
+#         answer = input(question + " ")
+#         file.write(f"{question} -> {answer}\n")
 
 
 
