@@ -1,0 +1,32 @@
+2026-06-05 00:49:39,285 - DEBUG - Game started
+
+2026-06-05 00:49:52,671 - INFO - Hidden word shown: _yt_on, real: python, user guessed: p
+2026-06-05 00:49:52,672 - INFO - Wrong guess
+2026-06-05 00:50:00,216 - INFO - Hidden word shown: f_as_, real: flask, user guessed: flask
+2026-06-05 00:50:00,216 - INFO - Correct guess
+2026-06-05 00:50:00,217 - INFO - Game finished with result: 50%
+
+2026-06-05 00:50:15,615 - DEBUG - Game started
+
+2026-06-05 00:50:23,321 - INFO - Hidden word shown: prog_ammi_g, real: programming, user guessed: programming
+2026-06-05 00:50:23,322 - INFO - Correct guess
+2026-06-05 00:50:29,145 - INFO - Hidden word shown: c_m_uter, real: computer, user guessed: computer
+2026-06-05 00:50:29,146 - INFO - Correct guess
+2026-06-05 00:50:29,146 - INFO - Game finished with result: გამარჯვება
+
+2026-06-05 00:51:22,143 - DEBUG - Game started
+
+2026-06-05 00:51:31,131 - INFO - Hidden word shown: i_terne_, real: internet, user guessed: internet
+2026-06-05 00:51:31,131 - INFO - Correct guess
+2026-06-05 00:51:37,220 - INFO - Hidden word shown: de_elo_er, real: developer, user guessed: developer
+2026-06-05 00:51:37,220 - INFO - Correct guess
+2026-06-05 00:51:37,220 - INFO - Game finished with result: გამარჯვება
+
+2026-06-05 00:52:07,284 - DEBUG - Game started
+
+2026-06-05 00:52:09,184 - INFO - Hidden word shown: _ompu_er, real: computer, user guessed: 
+2026-06-05 00:52:09,184 - INFO - Wrong guess
+2026-06-05 00:52:15,761 - INFO - Hidden word shown: inte__et, real: internet, user guessed: internet
+2026-06-05 00:52:15,761 - INFO - Correct guess
+2026-06-05 00:52:15,761 - INFO - Game finished with result: 50%
+
