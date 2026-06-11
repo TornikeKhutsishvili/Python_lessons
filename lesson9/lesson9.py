@@ -183,7 +183,7 @@
 # # ცელსიუსის შეცვლა
 # temp.celsius = 40
 #
-# print("\nAfter change:")
+# print("\nშეცვლის შემდეგ:")
 # print("Celsius:", temp.celsius)
 # print("Fahrenheit:", temp.fahrenheit)
 
