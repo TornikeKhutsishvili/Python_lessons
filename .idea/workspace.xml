@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3890c5e3-86bf-4b33-a4bd-a0f1fe6ccfbb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson7/words_game.log" beforeDir="false" afterPath="$PROJECT_DIR$/lesson7/words_game.log" afterDir="false" />
-    </list>
+    <list default="true" id="3890c5e3-86bf-4b33-a4bd-a0f1fe6ccfbb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,13 +32,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests in pytest_file.py.executor": "Run",
+    "Python tests.Python tests in unittest_file.py.executor": "Run",
     "Python.lesson10.executor": "Run",
     "Python.lesson6.executor": "Run",
     "Python.lesson7.executor": "Run",
     "Python.lesson8.executor": "Run",
     "Python.lesson9.executor": "Run",
     "Python.pytest.executor": "Run",
+    "Python.pytest_file.executor": "Run",
     "Python.unittest.executor": "Run",
+    "Python.unittest_file.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
