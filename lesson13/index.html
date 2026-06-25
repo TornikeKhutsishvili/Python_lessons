@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Its web-site is myself">
+    <meta name="author" content="Tornike Khutsishvili">
+    <meta name="keywords" content="info, tornike, hobby, info myself">
+
+    <!-- CDN links -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <title>Home</title>
+
+    <!-- main styles file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--  Start Header  -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Tornike Khutsishvili</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pages/hobby.html">Hobby</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--  End Header  -->
+
+
+    <!--  Start Main  -->
+    <main class="home-main">
+        <section class="intro">
+            <h1>კეთილი იყოს თქვენი მობრძანება</h1>
+            <p>ეს არის ჩემი პირადი ვებ-გვერდი, სადაც გაგაცნობთ ჩემს ჰობიებსა და ინტერესებს.</p>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="./assets/home-image/georgia-national-team.jpg" alt="ფეხბურთის თამაში">
+                <p>ფეხბურთის თამაში მაძლევს ენერგიას, მეხმარება ფიზიკური ფორმის შენარჩუნებაში და გუნდური მუშაობის უნარების განვითარებაში.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="./assets/home-image/brazil-national-team.jpg" alt="ფეხბურთის ყურება">
+                <p>მიყვარს ფეხბურთის ყურება და მსოფლიო ტურნირების თვალყურის დევნება. საქართველოს ნაკრების შემდეგ ჩემი საყვარელი ნაკრები ბრაზილიაა.</p>
+            </div>
+        </section>
+
+        <section class="animation-section">
+            <h2>ფეხბურთი</h2>
+            <div class="bouncing-ball">
+                <img src="./assets/home-image/ball.png" alt="ball">
+            </div>
+            <p>ფეხბურთი აერთიანებს მილიონობით ადამიანს მთელ მსოფლიოში და სპორტის ერთ-ერთი ყველაზე პოპულარული სახეობაა.</p>
+        </section>
+    </main>
+    <!--  End Main  -->
+
+
+    <!--  Start Footer  -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">Tornike Khutsishvili</div>
+                <div class="footer-col">
+                    <h3>FAQ</h3>
+                    <p>კითხვები? დაგვიკავშირდეთ <a class="cont" href="pages/contact.html">კონტაქტის</a> გვერდის საშუალებით.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>ვაკანსიები</h3>
+                    <p>ამჟამად ღია ვაკანსიები არ არის.</p>
+                </div>
+                <div class="footer-col social">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube" rel="noopener">
+                        <i class="fa-brands fa-youtube"></i></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub" rel="noopener">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="copyright">
+                &copy; <span class="current-year"></span>
+                Tornike Khutsishvili. ყველა უფლება დაცულია.
+            </p>
+        </div>
+    </footer>
+    <!--  End Footer  -->
+
+
+    <!--  scripts  -->
+    <script src="app.js" type="module" defer></script>
+</body>
+</html>
