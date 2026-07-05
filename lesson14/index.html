@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IT Field webpage built with HTML, CSS and Bootstrap." />
+    <meta name="keywords"
+        content="IT, programming, cybersecurity, cloud, Information Technology,
+                Web Development, HTML, CSS, Bootstrap"
+    />
+    <meta name="author" content="Tornike Khutsishvili" />
+
+    <!-- import CDN links -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    />
+
+    <!-- Main Style CSS link -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Title -->
+    <title>IT Field</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="home">
+        <!-- nav -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#home">IT Field</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNav"
+                    aria-controls="mainNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tracks" rel="noopener">Tracks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#learning" rel="noopener">Learning</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#apply" rel="noopener">Apply</a>
+                        </li>
+                    </ul>
+                    <button
+                        type="button"
+                        class="btn btn-primary ms-lg-3"
+                        data-bs-toggle="modal"
+                        data-bs-target="#joinModal"
+                    >
+                        Join IT Field
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- end nav -->
+
+        <!-- bottom content -->
+        <div class="container text-center py-5">
+            <h1 class="display-4 fw-bold mb-3">Build Your Future In IT</h1>
+            <p class="lead mb-4">
+                Explore in-demand technology paths with hands-on projects and community support.
+            </p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#tracks" class="btn btn-primary btn-lg">Explore Tracks</a>
+                <a href="registerForm.html" class="btn btn-outline-light btn-lg">Register</a>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Technology Carousel Section -->
+        <section class="container my-5" aria-label="Technology carousel">
+            <div id="carouselExampleCaptions" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"
+                    ></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="2000">
+                        <img
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80"
+                            class="d-block w-100"
+                            alt="Programming setup"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Software Development</h5>
+                            <p>Create real applications with modern frameworks.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img
+                            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1400&q=80"
+                            class="d-block w-100"
+                            alt="Cybersecurity concept"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cybersecurity</h5>
+                            <p>Protect systems and data from evolving threats.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img
+                            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80"
+                            class="d-block w-100"
+                            alt="Cloud network"
+                        />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cloud & DevOps</h5>
+                            <p>Deploy and scale software with confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular IT Tracks Section -->
+        <section id="tracks" class="container my-5">
+            <h2 class="text-center mb-4">Popular IT Tracks</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img
+                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80"
+                            class="card-img-top"
+                            alt="Code editor"
+                        />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Frontend Development</h5>
+                            <p class="card-text">
+                                Build responsive, user-friendly interfaces with HTML, CSS, and JavaScript.
+                            </p>
+                            <a href="#apply" class="btn btn-primary mt-auto">Start Path</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img
+                            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+                            class="card-img-top"
+                            alt="Security dashboard"
+                        />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cybersecurity Basics</h5>
+                            <p class="card-text">
+                                Learn ethical hacking concepts, security analysis, and system hardening.
+                            </p>
+                            <a href="#apply" class="btn btn-primary mt-auto">Start Path</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img
+                            src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80"
+                            class="card-img-top"
+                            alt="Cloud architecture"
+                        />
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cloud Engineering</h5>
+                            <p class="card-text">
+                                Understand cloud services, CI/CD pipelines, and scalable architecture.
+                            </p>
+                            <a href="#apply" class="btn btn-primary mt-auto">Start Path</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Section -->
+        <section id="learning" class="container my-5">
+            <h2 class="text-center mb-4">Learn With Video Content</h2>
+            <div class="ratio ratio-16x9 shadow rounded overflow-hidden">
+                <iframe
+                    src="https://www.youtube.com/embed/zOjov-2OZ0E"
+                    title="Introduction to IT careers"
+                    allow="
+                        accelerometer; autoplay; clipboard-write; encrypted-media;
+                        gyroscope; picture-in-picture; web-share
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </section>
+
+        <!-- Application Form Section -->
+        <section id="apply" class="container my-5 pb-5">
+            <h2 class="text-center mb-4">Quick Application Form</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- form -->
+                    <form class="p-4 rounded shadow-sm form-block">
+                        <!-- form fields -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="fullName"
+                                    placeholder="Enter your full name"
+                                    required
+                                />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    placeholder="name@example.com"
+                                    required
+                                />
+                            </div>
+                            <div class="col-12">
+                                <label for="track" class="form-label">Choose a Track</label>
+                                <select id="track" class="form-select" required>
+                                    <option value="default" selected disabled>Select one track</option>
+                                    <option>Frontend Development</option>
+                                    <option>Cybersecurity</option>
+                                    <option>Cloud Engineering</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Loading indicator -->
+                        <div class="d-flex align-items-center gap-3 mt-4 flex-wrap">
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                            <div class="spinner-border text-warning" role="status" aria-label="Loading indicator">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- End Main -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="joinModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="joinModalLabel">Welcome To IT Field Club</h5>
+                    <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Join our weekly sessions to learn coding, cybersecurity and cloud tools with peers.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="registerForm.html" class="btn btn-primary">Go To Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 TK. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"
+    ></script>
+</body>
+
+</html>
